@@ -1,4 +1,5 @@
 import logging
+import pymtp
 
 
 from file_sync.src.window import Window
@@ -9,10 +10,11 @@ from file_sync.src.window import Window
 
 # https://drautb.github.io/2015/07/27/the-perfect-exchange-mtp-with-python/
 
-# https://github.com/JeffLIrion/adb_shell
-# https://github.com/google/python-adb
-
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
+    device = pymtp.MTP()
+    device.connect()
+    print("\nConnected to device: %s" % device.get_devicename())
+
     window = Window()
