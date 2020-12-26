@@ -1,5 +1,5 @@
-import tkinter
-from tkinter import filedialog
+import Tkinter as tkinter
+#import tkFileDialog as filedialog
 
 
 from file_sync import WINDOW_NAME
@@ -9,13 +9,13 @@ from sync import sync
 class Window(object):
     def __init__(self):
         self._root = tkinter.Tk()
-        self._root.title(WINDOW_NAME)
-        self._root.geometry('400x200')
-        self._source = tkinter.StringVar()
-        self._target = tkinter.StringVar()
-        self._copy = tkinter.IntVar()
-        self._construct()
-        tkinter.mainloop()
+        #self._root.title(WINDOW_NAME)
+        #self._root.geometry('400x200')
+        #self._source = tkinter.StringVar()
+        #self._target = tkinter.StringVar()
+        #self._copy = tkinter.IntVar()
+        #self._construct()
+        #tkinter.mainloop()
 
     def _construct(self):
         lbl1 = tkinter.Label(master=self._root, textvariable=self._source)
@@ -42,7 +42,7 @@ class Window(object):
 
         :return: None
         """
-        filename = filedialog.askdirectory()
+        filename = '/'#filedialog.askdirectory()
         self._source.set(filename)
 
     def _browse_target(self):
@@ -50,7 +50,7 @@ class Window(object):
 
         :return: None
         """
-        filename = filedialog.askdirectory()
+        filename = '/'#filedialog.askdirectory()
         self._target.set(filename)
 
     def _run_sync(self):

@@ -1,20 +1,14 @@
 import logging
-import pymtp
 
 
-from file_sync.src.window import Window
+from file_sync.src.sync_new import sync
 
 
-# TODO: find a way to access android phone from file system
-# https://github.com/ganeshrvel/openmtp
-
-# https://drautb.github.io/2015/07/27/the-perfect-exchange-mtp-with-python/
+TARGET_LOCATION = '/Users/marvin/Desktop/test_file_sync'
+REMOVE_SYNCED = False
 
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
-    device = pymtp.MTP()
-    device.connect()
-    print("\nConnected to device: %s" % device.get_devicename())
 
-    window = Window()
+    sync(TARGET_LOCATION, remove_synced=REMOVE_SYNCED)

@@ -20,7 +20,7 @@ class BookKeeper(object):
                         lst_files.append(row[:-1])
                     else:
                         lst_files.append(row)
-        except FileNotFoundError:
+        except Exception:
             pass
         return lst_files
 
